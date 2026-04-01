@@ -41,4 +41,9 @@ class SongRepositoryMock implements SongRepository {
   Future<void> likeSong(String songId, int currentLikes) async {
     return Future.delayed(const Duration(milliseconds: 500));
   }
+
+  @override
+  void clearCache() {
+    _cachedSongs = null;
+  }
 }

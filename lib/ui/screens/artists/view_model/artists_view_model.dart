@@ -31,4 +31,9 @@ class ArtistsViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  Future<void> refresh() async {
+    artistRepository.clearCache();
+    fetchArtists();
+  }
 }

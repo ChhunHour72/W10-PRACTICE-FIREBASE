@@ -29,7 +29,7 @@ class ArtistRepositoryFirebase implements ArtistRepository {
       for (final entry in artistJson.entries) {
         result.add(ArtistDto.fromJson(entry.key, entry.value));
       }
-      
+
       _cachedArtists = result;
 
       return result;
@@ -40,4 +40,9 @@ class ArtistRepositoryFirebase implements ArtistRepository {
 
   @override
   Future<Artist?> fetchArtistById(String id) async {}
+
+  @override
+  void clearCache() {
+    _cachedArtists = null;
+  }
 }

@@ -72,6 +72,12 @@ class LibraryViewModel extends ChangeNotifier {
 
   bool isSongPlaying(Song song) => playerState.currentSong == song;
 
+  Future<void> refresh() async {
+    songRepository.clearCache();
+    artistRepository.clearCache();
+    fetchSong();
+  }
+
   void start(Song song) => playerState.start(song);
   void stop(Song song) => playerState.stop();
 

@@ -36,4 +36,9 @@ class ArtistRepositoryMock implements ArtistRepository {
       );
     });
   }
+
+  @override
+  void clearCache() {
+    _cachedArtists = null;
+  }
 }

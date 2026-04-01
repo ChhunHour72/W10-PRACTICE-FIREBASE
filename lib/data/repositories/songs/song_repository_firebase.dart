@@ -58,4 +58,9 @@ class SongRepositoryFirebase extends SongRepository {
 
   @override
   Future<Song?> fetchSongById(String id) async {}
+
+  @override
+  void clearCache() {
+    _cachedSongs = null;
+  }
 }
